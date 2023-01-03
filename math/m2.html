@@ -1,0 +1,24 @@
+{% extends 'calc_base.html' %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/square-foot.css' %}">
+    {% endblock style %}
+
+{% block calc_body %}
+
+
+
+
+      
+      <div class="card-body">
+        
+        
+        <br>
+        <table cellspacing="0" cellpadding="0">
+            
+        <tr>
+            <td><span class="field_text"><b>Working Period:</b></span></td>
+            <td><select id="ddlWorkingPeriod" name="ddlWorkingPeriod" class="input-custom" onchange="calculate()">
+                <option value="Hourly">Hourly</option>
+                <option value="Weekly">Weekly</option>
+                <option value="Bi-Weekly">Bi-Weekly</option>
