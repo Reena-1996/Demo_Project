@@ -1,0 +1,97 @@
+{% extends 'calc_base.html' %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/acreage.css' %}">
+    {% endblock style %}
+
+{% block calc_body %}
+
+
+
+
+      
+      <div class="card-body">
+        
+        
+        <br>
+        <table cellspacing="0" cellpadding="0">
+            
+            <tr>
+                <td><span class = "field_text"><b>Unit of Length</b></span></td>
+                <td>
+                <select id="unit" class="input-custom" onchange ="calculate()">
+                    <option  value="feet">Feet</option>
+                    <option  value="inches">Inches</option>
+                    <option  value="yards">Yards</option>
+                    <option  value="meter">Meters</option>
+                    <option  value="km">Kilometers</option>
+                </select>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="field_text"><b>Width</b></span></td>
+                <td><input id="width_input" class="input-custom" value="10" onkeyup="calculate()"></td>
+            </tr>
+            <tr>
+                <td><span class="field_text"><b>Length</b></span></td>
+                <td><input id="length_input" class="input-custom" value="10" onkeyup="calculate()"></td>
+            </tr>
+            </table>
+            <br>
+            <table cellspacing="0" cellpadding="0">
+                <tr>
+                    <td colspan="2"><span class="field_text">Area Result</span></td>
+                </tr>
+                <tr>
+                    <td width="200"><span id="acres" class="result_data" style="color: #3675DD; font: 27px Verdana;font-weight:bold;">0.0023</span></td>
+                    <td>Acres </td>
+                </tr>
+                <tr>
+                    <td width="200"><span id="hectares">0.00093</span></td>
+                    <td>Hectares </td>
+                </tr>
+                <tr>
+                    <td width="200"><span id="squareInches">14,400</span></td>
+                    <td>Inches&sup2 </td>
+                </tr>
+                <tr>
+                    <td width="200"><span id="squareFoot">100</span></td>
+                    <td>Feet&sup2 </td>
+                </tr>
+                <tr>
+                    <td width="200"><span id="squareYards">11.11111</span></td>
+                    <td>Yards&sup2 </td>
+                </tr>
+                <tr>
+                    <td width="200"><span id="squareMeters">9.2903</span></td>
+                    <td>Meters&sup2 </td>
+                </tr>
+                <tr>
+                    <td width="200"><span id="squareKm">0.00001</span></td>
+                    <td>Kilometers&sup2 </td>
+                </tr>
+                <tr>
+                    <td width="200"><span id="squareMile">0</span></td>
+                    <td>Miles&sup2 </td>
+                </tr>
+                </table>
+        <br />
+          
+          
+        
+        </div>
+        
+        
+        
+        
+        
+    
+{% endblock calc_body %}
+
+
+
+
+
+{% block script %}
+<script src="/static/js/acreage.js"></script>
+{% endblock script %}

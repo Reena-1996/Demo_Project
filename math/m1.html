@@ -1,0 +1,124 @@
+{% extends 'calc_base.html' %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/square-foot.css' %}">
+    {% endblock style %}
+
+{% block calc_body %}
+
+
+
+
+      
+      <div class="card-body">
+        
+        
+        <br>
+        <table cellspacing="0" cellpadding="0">
+            
+        <tr>
+            <td><span class="field_text"><b>Working Period:</b></span></td>
+            <td><select id="ddlWorkingPeriod" name="ddlWorkingPeriod" class="input-custom" onchange="calculate()">
+                <option value="Hourly">Hourly</option>
+                <option value="Weekly">Weekly</option>
+                <option value="Bi-Weekly">Bi-Weekly</option>
+                <option value="Semi-Monthly">Semi-Monthly</option>
+                <option value="Monthly" selected="true">Monthly</option>
+                <option value="Quarterly">Quarterly</option>
+                <option value="Semi-Annually">Semi-Annually</option>
+                <option value="Annually">Annually</option>
+            </select>
+            </td>
+        </tr>        
+        <tr>
+            <td width="200"><span class="field_text"><b>Amount Made:</b></span></td>
+            <td><input id="txtAmountMade" type="text" class="input-custom" name="txtAmountMade" value="2" class="input-custom" onkeyup="calculate()"> $</td>
+        </tr>
+        <tr>
+            <td><span class="field_text"><b>Hours Per Week:</b></span></td>
+            <td><input id="txtHoursPerWeek" type="text" class="input-custom" name="txtHoursPerWeek" value="2" class="input-custom" onkeyup="calculate()"></td>
+        </tr>
+       </table>
+       <br>
+        <table cellspacing="0" cellpadding="0">
+            
+            <tr>
+                <td><b>Monthly:</b></td>
+                <td><span id="lblMonthly" class="result_data" style="color: teal; font: 27px Verdana;font-weight:bold;">$2.00</span></td>
+            </tr>		
+            <tr>
+                <td width="200"><b>Hourly:</b></td>
+                <td><span id="lblHourly">$2.00</span></td>
+            </tr>
+            <tr>
+                <td><b>Weekly:</b></td>
+                <td><span id="lblWeekly">$4.00</span></td>
+            </tr>
+            <tr>
+                <td><b>Bi-Weekly:</b></td>
+                <td><span id="lblBiWeekly">$8.00</span></td>
+            </tr>
+            <tr>
+                <td><b>Semi-Monthly:</b></td>
+                <td><span id="lblSemiMonthly">$8.67</span></td>
+            </tr>
+            <tr>
+                <td><b>Quarterly:</b></td>
+                <td><span id="lblQuarterly">$52.00</span></td>
+            </tr>
+            <tr>
+                <td><b>Semi-Annually:</b></td>
+                <td><span id="lblSemiAnnually">$104.00</span></td>
+            </tr>
+            <tr>
+                <td><b>Annually:</b></td>
+                <td><span id="lblAnnually">$208.00</span></td>
+            </tr>                                                               
+        </table>
+        <br />
+          
+          
+        
+        </div>
+        {% endblock calc_body %}
+        {% block calc_result %}
+    
+        <div class="card mb-4" id="monthlyelement1">
+            <div class="card-header primary-bg primary-text px-3 py-1">
+                <h1 class="h1">Steps To Calculate Gross Monthly Income Calculator</h1>
+            </div>
+            <div class="card-body container">
+                <div style="margin-left: 21px;margin-top: 22px;">
+                  <h1><b style="color: teal;">Monthly Gross Income: <span id="result">$2.00</span></b></h1><br>
+                
+                
+                
+                
+              
+              <p><b>Input Values are:</b><br></p>
+                <p>Amount =  <span id="rate">2</span> </p>
+                <p>Hours Per Week = <span id="hpw">2</span></p>
+                <p>Number of months in a year = 12</p>
+                
+                
+                  <p style="color:black;font-weight:bold;"><span id="wp">As Working Period is in Monthly</span></br></p>
+                  <strong><b><p>Monthly Gross Income Formula:</b></strong>
+                  <p style="color:#CD5C5C;font-weight:bold;"><span id="for1" >Monthly Gross Income = (Amount × 12 /  number of months in a year)</span></p>
+                  <p>
+                    <b>Put values into formula</b> <br></p>
+                  <P><span id="for">Monthly Gross Income = (Amount × 12 /  number of months in a year)</span></br></p>
+                    <p>Monthly Gross Income = (<span id="rate1">2</span> × <span id="wpp">12</span> / 12)</span></p>
+                  <p>Monthly Gross Income = <span id="res">$2.00</span></p>
+              </div>
+          </div>
+             <!-- card-body -->
+        </div> <!-- card -->
+        
+        {% endblock calc_result %}
+
+
+
+
+{% block script %}
+<script src="/static/js/gross-monthly-income.js"></script>
+{% endblock script %}
